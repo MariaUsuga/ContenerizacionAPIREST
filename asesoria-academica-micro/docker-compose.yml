@@ -1,0 +1,15 @@
+version: "3.7"
+services: 
+  asesoria-academica-micro:
+  container_name: asesoria-academica-micro
+  image: mariaarenas/asesoria-academica-micro:1.0.1
+  build:
+      dockerfile: asesoria-academica-micro/Dockerfile
+      context: .
+  ports:
+   - 4000:4000
+  networks:
+   - ase-acad
+  depends_on:
+   - asesoria-academica
+  asesoria-academica:
